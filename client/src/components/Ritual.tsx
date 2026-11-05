@@ -4,7 +4,7 @@ import { Play } from "lucide-react";
 import { useT } from "@/i18n";
 import { RITUAL } from "@/data/site";
 import { media } from "@/lib/hooks";
-import { Reveal, SplitHeading } from "./Reveal";
+import { Reveal, ScrollDrift, SplitHeading } from "./Reveal";
 import { Lightbox, type Item } from "./Lightbox";
 
 const ROMAN = ["I", "II", "III", "IV", "V"];
@@ -58,9 +58,9 @@ export function Ritual() {
               </AnimatePresence>
             </div>
             <div className="mt-8 flex items-center gap-6">
-              <div className="facet-clip relative aspect-[3/4] w-36 overflow-hidden bg-moss">
+              <ScrollDrift y={24} rotate={-4} className="shrink-0"><div className="facet-clip relative aspect-[3/4] w-36 overflow-hidden bg-moss">
                 <video ref={vid} src={media("ritual.mp4")} poster={media("ritual.webp")} loop muted playsInline preload="metadata" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
-              </div>
+              </div></ScrollDrift>
               <button onClick={() => setLb(0)} className="group inline-flex items-center gap-3 text-left">
                 <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold text-gold transition group-hover:bg-gold group-hover:text-ink"><Play size={20} aria-hidden="true" /></span>
                 <span className="font-display text-2xl leading-tight">{t.ritual.watch}</span>

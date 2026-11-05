@@ -9,7 +9,7 @@ Stack: Vite 5 · React 18 · TypeScript · Tailwind 3 · Framer Motion. Bilíngu
 Vercel: `vercel.json` já aponta `dist/public`. Tudo em `client/public/media` (caminhos relativos).
 
 ## Seções
-Intro · Hero (vídeo) · Faixa · Manifesto · Coleção (6 gemas) · Transformações (6 antes/depois ARRASTÁVEIS) · Ritual (vídeo + momentos) · Amanda · Avaliações (prints) · Etapas · Contato · WhatsApp.
+Intro · Hero (vídeo de fundo em tela cheia, com parallax no scroll) · Faixa · Manifesto · Coleção (6 gemas) · Transformações (6 antes/depois ARRASTÁVEIS) · Ritual (vídeo + momentos) · Amanda · Avaliações (prints) · Etapas · Contato · WhatsApp.
 
 ## Mídia (client/public/media)
 hero-video.mp4, hero*.webp, ritual.mp4/.webp, session.mp4/.webp, ritual-1..5, amanda-*, fb-1..9, case-1..6-before/after.webp.
@@ -23,3 +23,5 @@ Ao trocar uma mídia, use NOVO nome de arquivo (a Vercel cacheia /media por 1 an
 - O vídeo session.mp4 tem legendas em PT gravadas no próprio vídeo.
 - A ordem dos "momentos" do Ritual é editorial, não afirma a ordem real do procedimento.
 - Nota "resultados variam" mantida abaixo dos comparadores.
+
+Animações de scroll: barra de progresso dourada, hero com zoom\/fade, faixa que desliza, gema e vídeo do Ritual com parallax, comparador que "abre" ao entrar.

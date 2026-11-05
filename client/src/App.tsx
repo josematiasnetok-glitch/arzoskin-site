@@ -1,6 +1,7 @@
 import { LanguageProvider } from "@/i18n";
 import { IntroProvider } from "@/lib/intro";
 import { Intro } from "@/components/Intro";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Strip } from "@/components/Strip";
@@ -20,6 +21,7 @@ export default function App() {
     <LanguageProvider>
       <IntroProvider>
         <Intro />
+        <ScrollProgress />
         <Header />
         <main>
           <Hero />

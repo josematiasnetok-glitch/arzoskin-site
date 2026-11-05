@@ -5,7 +5,7 @@ import { useLang } from "@/i18n";
 import { CASES, WA_MESSAGES, whatsappLink } from "@/data/site";
 import { media } from "@/lib/hooks";
 import { Compare } from "./Compare";
-import { Reveal, SplitHeading } from "./Reveal";
+import { Reveal, ScrollScale, SplitHeading } from "./Reveal";
 
 export function Transform() {
   const { t, lang } = useLang();
@@ -21,7 +21,7 @@ export function Transform() {
           <Reveal delay={0.1}><p className="mt-5 text-lg leading-relaxed text-ink/70">{t.transform.sub}</p></Reveal>
         </div>
 
-        <div className="mt-12 grid items-start gap-8 lg:grid-cols-[1.4fr_.6fr] lg:gap-14" style={{ ["--cmp-h" as string]: "min(74svh, 700px)" }}>
+        <ScrollScale from={0.92} className="mt-12"><div className="grid items-start gap-8 lg:grid-cols-[1.4fr_.6fr] lg:gap-14" style={{ ["--cmp-h" as string]: "min(74svh, 700px)" }}>
           <div className="min-w-0">
             <AnimatePresence mode="wait">
               <motion.div key={c.n} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.45 }}>
@@ -56,6 +56,7 @@ export function Transform() {
             <p className="mt-5 text-sm text-ink/50">{t.transform.note}</p>
           </div>
         </div>
+      </ScrollScale>
       </div>
     </section>
   );

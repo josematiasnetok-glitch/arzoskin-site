@@ -79,3 +79,23 @@ export function Parallax({ children, className = "", amount = 7 }: { children: R
     </div>
   );
 }
+
+/** Cresce e "abre" conforme entra na tela (scroll-linked). */
+export function ScrollScale({ children, className = "", from = 0.9 }: { children: ReactNode; className?: string; from?: number }) {
+  const reduce = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "start 35%"] });
+  const scale = useTransform(scrollYProgress, [0, 1], [from, 1]);
+  const op = useTransform(scrollYProgress, [0, 0.5], [0.3, 1]);
+  return <motion.div ref={ref} className={className} style={reduce ? undefined : { scale, opacity: op }}>{children}</motion.div>;
+}
+
+/** Desloca/gira o conteúdo ao rolar (parallax livre). */
+export function ScrollDrift({ children, className = "", y = 60, rotate = 0 }: { children: ReactNode; className?: string; y?: number; rotate?: number }) {
+  const reduce = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const ty = useTransform(scrollYProgress, [0, 1], [y, -y]);
+  const rot = useTransform(scrollYProgress, [0, 1], [-rotate, rotate]);
+  return <motion.div ref={ref} className={className} style={reduce ? undefined : { y: ty, rotate: rot }}>{children}</motion.div>;
+}

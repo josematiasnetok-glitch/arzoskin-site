@@ -4,7 +4,7 @@ import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { useLang } from "@/i18n";
 import { GEMS, GEM_BG, PROTOCOLS, WA_MESSAGES, whatsappLink } from "@/data/site";
 import { Gem } from "./Gem";
-import { Reveal, SplitHeading } from "./Reveal";
+import { Reveal, ScrollDrift, SplitHeading } from "./Reveal";
 
 const ROMAN = ["I", "II", "III", "IV", "V", "VI"];
 
@@ -62,7 +62,7 @@ export function Collection() {
               >
                 <div className="relative">
                   <div aria-hidden="true" className="absolute left-1/2 top-1/2 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ background: `radial-gradient(circle, ${light}55, transparent 65%)` }} />
-                  <Gem k={cur.key} className="floaty relative w-56 sm:w-64 lg:w-[19rem]" />
+                  <ScrollDrift y={30} rotate={8} className="relative"><Gem k={cur.key} className="floaty relative w-56 sm:w-64 lg:w-[19rem]" /></ScrollDrift>
                 </div>
                 <p className="mt-8 text-[11px] uppercase tracking-[0.28em]" style={{ color: light }}>{it.sub}</p>
                 <h3 className="mt-2 font-display text-4xl font-medium sm:text-5xl">{it.name}</h3>
