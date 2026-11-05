@@ -32,16 +32,16 @@ export function Header() {
   }, []);
 
   const links = [
-    ["#protocols", t.nav.protocols],
+    ["#collection", t.nav.collection],
     ["#results", t.nav.results],
+    ["#ritual", t.nav.ritual],
     ["#about", t.nav.about],
-    ["#reviews", t.nav.reviews],
     ["#contact", t.nav.contact],
   ];
   const wa = whatsappLink(WA_MESSAGES.general[lang]);
   const solid = scrolled || open;
   // Mobile: o hero é escuro (texto claro). Desktop: o hero é claro, então o texto do topo é escuro.
-  const tone = solid ? "text-ink" : "text-cream lg:text-ink";
+  const tone = solid ? "text-ink" : "text-cream";
 
   const LangBtn = () => (
     <div className="flex items-center rounded-full border border-gold/70 p-0.5" role="group" aria-label={t.common.language}>
@@ -61,7 +61,7 @@ export function Header() {
     <header className={`fixed inset-x-0 top-0 z-50 transition duration-500 ${hidden && !open ? "-translate-y-full" : "translate-y-0"} ${solid ? "bg-cream/95 shadow-sm backdrop-blur" : ""} ${tone}`}>
       <motion.div aria-hidden="true" className="absolute inset-x-0 top-0 h-0.5 origin-left bg-gold" style={{ scaleX: progress }} />
       <div className="wrap flex h-[68px] items-center justify-between px-5">
-        <a href="#top" aria-label={SITE.name}><Wordmark light={!solid} className={!solid ? "lg:!text-ink" : ""} /></a>
+        <a href="#top" aria-label={SITE.name}><Wordmark light={!solid} /></a>
         <nav className="hidden items-center gap-8 text-sm lg:flex" aria-label="Main">
           {links.map(([h, l]) => (<a key={h} href={h} className="transition hover:text-goldDeep">{l}</a>))}
         </nav>

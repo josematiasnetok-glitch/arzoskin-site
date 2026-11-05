@@ -36,12 +36,21 @@ export const WA_MESSAGES = {
 
 // Cores de cada gema (ponto/brilho dos protocolos).
 export const GEMS = {
-  esmeralda: ["#4FA383", "#1F5B45"],
-  quartzo: ["#F0C4CC", "#C98A97"],
-  rubi: ["#D9475F", "#7E1426"],
-  onix: ["#5A5A60", "#161618"],
-  safira: ["#5E86D0", "#1E3A78"],
-  diamante: ["#F4F7FA", "#A9B7C4"],
+  esmeralda: ["#6FD1A6", "#0F4A36"],
+  quartzo: ["#FBD9DF", "#B9707F"],
+  rubi: ["#F0647C", "#6E0F22"],
+  onix: ["#8A8A93", "#0E0E11"],
+  safira: ["#7FA6F0", "#14316E"],
+  diamante: ["#FFFFFF", "#8FA2B5"],
+} as const;
+// Cor de fundo da seção quando a pedra está ativa (escura, para o texto claro ler bem).
+export const GEM_BG = {
+  esmeralda: "#0E2A20",
+  quartzo: "#3A1F27",
+  rubi: "#2E0D16",
+  onix: "#121214",
+  safira: "#0E1B3A",
+  diamante: "#1B2530",
 } as const;
 export type GemKey = keyof typeof GEMS;
 
@@ -54,17 +63,16 @@ export const PROTOCOLS: { key: GemKey; id: string }[] = [
   { key: "diamante", id: "diamante" },
 ];
 
-export type ResultItem = { src: string; ratio: string; en: string; pt: string };
-export const RESULTS: ResultItem[] = [
-  { src: "result-1.webp", ratio: "4/5", en: "Before and after: skin tone and texture, side profile", pt: "Antes e depois: tom e textura da pele, perfil" },
-  { src: "result-2.webp", ratio: "4/5", en: "Before and after: eye area and skin tone", pt: "Antes e depois: região dos olhos e tom da pele" },
-  { src: "result-3.webp", ratio: "4/5", en: "Before and after: nose area, without and with ARZOSKIN", pt: "Antes e depois: região do nariz, sem e com ARZOSKIN" },
-  { src: "result-4.webp", ratio: "4/5", en: "Before and after: a facial changes everything", pt: "Antes e depois: um facial muda tudo" },
-  { src: "result-5.webp", ratio: "4/5", en: "Before and after: acne-prone skin", pt: "Antes e depois: pele com acne" },
-  { src: "result-6.webp", ratio: "1/1", en: "Before and after: pores and texture close-up", pt: "Antes e depois: poros e textura de perto" },
-];
+export const CASES = [
+  { n: 1, w: 634, h: 1350, focus: "50% 40%" },
+  { n: 2, w: 632, h: 1285, focus: "50% 52%" },
+  { n: 3, w: 1360, h: 1116, focus: "50% 50%" },
+  { n: 4, w: 840, h: 898, focus: "50% 50%" },
+  { n: 5, w: 1400, h: 826, focus: "50% 40%" },
+  { n: 6, w: 590, h: 1190, focus: "50% 50%" },
+] as const;
 
 // Ordem dos depoimentos: o primeiro está em inglês; os demais são conversas reais em português.
 export const FEEDBACK = [9, 8, 5, 6, 7, 2, 4, 1, 3].map((n) => ({ src: `fb-${n}.webp` }));
 
-export const RITUAL = ["ritual-1.webp", "ritual-2.webp", "ritual-3.webp", "ritual-4.webp"] as const;
+export const RITUAL = ["ritual-4.webp", "ritual-2.webp", "ritual-1.webp", "ritual-3.webp", "ritual-5.webp"] as const;

@@ -2,21 +2,23 @@ import { Instagram, MapPin, MessageCircle } from "lucide-react";
 import { useLang } from "@/i18n";
 import { SITE, WA_MESSAGES, whatsappLink } from "@/data/site";
 import { media } from "@/lib/hooks";
+import { Gem } from "./Gem";
 import { ImageReveal, Reveal, SplitHeading } from "./Reveal";
 
 export function Contact() {
   const { t, lang } = useLang();
   const wa = whatsappLink(WA_MESSAGES.general[lang]);
   return (
-    <section id="contact" className="section bg-ink text-cream">
-      <div className="wrap grid items-center gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
-        <ImageReveal className="mx-auto aspect-[3/4] w-full max-w-sm rounded-t-[999px] lg:max-w-none">
+    <section id="contact" className="section relative overflow-hidden bg-ink text-cream">
+      <Gem k="diamante" className="floaty pointer-events-none absolute -right-20 -top-10 w-72 opacity-20 md:-right-10 md:w-[28rem]" />
+      <div className="wrap relative grid items-center gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-20">
+        <ImageReveal className="facet-clip mx-auto aspect-[3/4] w-full max-w-xs rounded-[2rem] lg:max-w-none lg:rounded-none">
           <img src={media("amanda-2.webp")} alt={t.alt.amandaSuit} loading="lazy" className="h-full w-full object-cover object-[50%_18%]" />
         </ImageReveal>
         <div>
           <Reveal><p className="kicker !text-gold">{t.contact.kicker}</p></Reveal>
-          <SplitHeading text={t.contact.title} className="h2 mt-5 !text-cream" />
-          <Reveal delay={0.1}><p className="mt-5 max-w-xl text-lg leading-relaxed text-cream/75">{t.contact.sub}</p></Reveal>
+          <SplitHeading text={t.contact.title} className="mt-5 font-display text-[3rem] font-medium leading-[0.98] text-cream sm:text-7xl lg:text-[5.6rem]" />
+          <Reveal delay={0.1}><p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/75">{t.contact.sub}</p></Reveal>
           <Reveal delay={0.15}>
             <a href={wa} target="_blank" rel="noopener noreferrer" data-cta="whatsapp-contact" className="btn btn-gold mt-8 w-full sm:w-auto">
               <MessageCircle size={18} aria-hidden="true" /> {t.common.chat}

@@ -43,3 +43,25 @@
 
 .no-bar { scrollbar-width: none; }
 .no-bar::-webkit-scrollbar { display: none; }
+
+/* ——— conceito: lapidação ——— */
+@keyframes glint { 0% { transform: translateX(0); } 55%, 100% { transform: translateX(330px); } }
+.gem-glint { animation: glint 4.8s ease-in-out infinite; }
+@keyframes floaty { 0%, 100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-14px) rotate(1.5deg); } }
+.floaty { animation: floaty 7s ease-in-out infinite; }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 26s linear infinite; }
+.marquee-rev { animation: marquee 60s linear infinite reverse; }
+.marquee-slow { animation: marquee 70s linear infinite; }
+.pause-hover:hover .marquee-slow, .pause-hover:hover .marquee-rev { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .gem-glint, .floaty, .spin-slow, .marquee-rev, .marquee-slow { animation: none; } }
+
+.btn-gold { position: relative; overflow: hidden; }
+.btn-gold::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.55) 50%, transparent 65%); transform: translateX(-120%); transition: transform .9s ease; }
+.btn-gold:hover::after { transform: translateX(120%); }
+
+.outline-text { -webkit-text-stroke: 1px rgba(184,154,98,.55); color: transparent; }
+@media (min-width: 1024px) { .facet-clip { clip-path: polygon(14% 0, 86% 0, 100% 9%, 100% 91%, 86% 100%, 14% 100%, 0 91%, 0 9%); } }
+@keyframes shine-bg { from { background-position: 160% 0; } to { background-position: -60% 0; } }
+.shine-text { background: linear-gradient(105deg, #F6F2E9 38%, #D9BD84 50%, #F6F2E9 62%); background-size: 260% 100%; background-position: 160% 0; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine-bg 2.4s 1s ease-in-out 1 both; }
+.rule-gold { background: linear-gradient(90deg, transparent, #B89A62, transparent); height: 1px; }

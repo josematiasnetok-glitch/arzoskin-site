@@ -53,7 +53,7 @@ export function Intro() {
               <Mark className="h-16 w-16 text-gold sm:h-20 sm:w-20" />
             </motion.div>
             <motion.h1
-              className="mt-6 font-display text-[2.6rem] font-medium sm:text-6xl md:text-7xl"
+              className="shine-text mt-6 font-display text-[2.6rem] font-medium sm:text-6xl md:text-7xl"
               initial={{ opacity: 0, letterSpacing: reduce ? "0.3em" : "0.6em" }} animate={{ opacity: 1, letterSpacing: "0.3em" }}
               transition={{ duration: reduce ? 0.8 : 1.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >

@@ -5,9 +5,10 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Strip } from "@/components/Strip";
 import { About } from "@/components/About";
-import { Protocols } from "@/components/Protocols";
-import { Experience } from "@/components/Experience";
-import { Results } from "@/components/Results";
+import { Manifesto } from "@/components/Manifesto";
+import { Collection } from "@/components/Collection";
+import { Transform } from "@/components/Transform";
+import { Ritual } from "@/components/Ritual";
 import { Reviews } from "@/components/Reviews";
 import { Steps } from "@/components/Steps";
 import { Contact } from "@/components/Contact";
@@ -23,10 +24,11 @@ export default function App() {
         <main>
           <Hero />
           <Strip />
+          <Manifesto />
+          <Collection />
+          <Transform />
+          <Ritual />
           <About />
-          <Protocols />
-          <Experience />
-          <Results />
           <Reviews />
           <Steps />
           <Contact />
