@@ -1,0 +1,45 @@
+@import "@fontsource/dm-sans/300.css";
+@import "@fontsource/dm-sans/400.css";
+@import "@fontsource/dm-sans/500.css";
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+@import "@fontsource/cormorant-garamond/500-italic.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body { @apply bg-cream text-ink font-sans antialiased; }
+  h1, h2, h3 { @apply font-display; }
+  :focus-visible { outline: 2px solid #7C6234; outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: #E9E1D0; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[15px] font-medium tracking-wide transition duration-300 min-h-[48px]; }
+  .btn-gold { @apply bg-gold text-ink hover:bg-[#c9ad78] shadow-[0_10px_30px_-12px_rgba(124,98,52,.7)]; }
+  .btn-dark { @apply bg-ink text-cream hover:bg-moss; }
+  .btn-ghost { @apply border border-white/60 text-white hover:bg-white/15; }
+  .btn-outline { @apply border border-ink/30 text-ink hover:bg-ink hover:text-cream; }
+  .kicker { @apply inline-flex items-center gap-3 text-[12px] uppercase tracking-[0.28em] text-goldDeep font-medium; }
+  .kicker::before { content: ""; width: 2rem; height: 1px; background: currentColor; opacity: .55; }
+  .section { @apply px-5 py-20 md:py-28; }
+  .wrap { @apply mx-auto w-full max-w-6xl; }
+  .h2 { @apply font-display font-medium text-4xl md:text-6xl leading-[1.05] text-ink; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee { animation: marquee 45s linear infinite; }
+.marquee:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .marquee { animation: none; } }
+
+.no-bar { scrollbar-width: none; }
+.no-bar::-webkit-scrollbar { display: none; }
